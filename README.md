@@ -41,7 +41,9 @@ Using Ruby on Rails, we'd like you to create a simple experts directory search t
 
 ### Setup
 $ docker-compose build 
+
 $ docker-compose run --rm web bundle exec rails db:reset
+
 $ docker-compose run --rm web bundle exec rails db:migrate
 
 ### Tests
