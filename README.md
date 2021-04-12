@@ -44,8 +44,6 @@ $ docker-compose build
 
 $ docker-compose run --rm web bundle exec rails db:reset
 
-$ docker-compose run --rm web bundle exec rails db:migrate
-
 ### Tests
 $ docker-compose run --rm web bundle exec rspec
 
