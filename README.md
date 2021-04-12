@@ -40,6 +40,8 @@ Using Ruby on Rails, we'd like you to create a simple experts directory search t
 2.7.2
 
 ### Setup
+Clone the project into your machine:
+Run:
 $ docker-compose build 
 
 $ docker-compose run --rm web bundle exec rails db:reset
