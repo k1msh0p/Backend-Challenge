@@ -1,0 +1,21 @@
+<h1>All Members</h1>
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th><abbr title="Name">Name</abbr></th>
+	    <th><abbr title="Website">Website</th>
+	    <th><abbr title="Show"></th>
+	  </tr>
+	</thead>
+	<tbody>
+  	<% @members.each do |member| %>
+	    <tr>
+	      <td><%=member.name%></td>
+	      <td><%=member.url_short%></td>
+	      <td><%= link_to "Show", member_path(member)%></td>
+	    </tr>
+		<% end %>
+	</tbody>
+</table>
+

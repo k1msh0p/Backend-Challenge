@@ -1,0 +1,61 @@
+<h1>Member</h1>
+<p></p>
+
+<nav class="breadcrumb is-large" aria-label="breadcrumbs">
+  <ul>
+    <li><%= link_to 'Define Friendship', define_friend_member_path(@member)%></li>
+    <li><%= link_to 'Search Expert', search_expert_member_path(@member)%></li>
+  </ul>
+</nav>
+
+<div>
+<div class="columns">
+  <div class="column is-one-fifth"><label class="label">Name</label></div>
+  <div class="column"><%=@member.name%></div>
+</div>
+<div class="columns">
+  <div class="column is-one-fifth"><label class="label">Website</label></div>
+  <div class="column"><%=@member.website%></div>
+</div>
+<div class="columns">
+  <div class="column is-one-fifth"><label class="label">Shorten URL</label></div>
+  <div class="column"><%=@member.url_short%></div>
+</div>
+<div class="columns">
+  <div class="column is-one-fifth"><label class="label">Website Heading 1</label></div>
+  <div class="column"><%=@member.heading1%></div>
+</div>
+<div class="columns">
+  <div class="column is-one-fifth"><label class="label">Website Heading 2</label></div>
+  <div class="column"><%=@member.heading2%></div>
+</div>
+<div class="columns">
+  <div class="column is-one-fifth"><label class="label">Website Heading 3</label></div>
+  <div class="column"><%=@member.heading3%></div>
+</div>
+</div>
+
+<br>
+<table class="table">
+	<thead>
+	  <tr>
+	      <td></td>
+	    <th><abbr title="Name">Name</abbr></th>
+	    <th><abbr title="Website">Show</abbr></th>
+	  </tr>
+	</thead>
+	<tbody>
+		<% if @friends %>
+			<% @friends.each_with_index do |m, index| %>
+		    <tr>
+		      <td><%=index+1%></td>
+		      <td><%=m.name%></td>
+		      <td><%= link_to m.name, member_path(m)%></td>
+		    </tr>
+			<% end %>
+		<% end %>
+	</tbody>
+</table>
+
+
+

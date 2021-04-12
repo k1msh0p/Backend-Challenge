@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Everlywell</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+		<div id="container">
+				<%= render :partial => 'layouts/header' %>
+
+				<% flash.each do |key, value| %>
+					<div class="content flash_<%=key%>"><%= sanitize value.html_safe %></div>
+				<% end %>
+
+				<div class="content">
+					<%= yield %>
+				</div>
+		</div>
+
+
+</body>
+</html>

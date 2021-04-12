@@ -1,0 +1,28 @@
+<h3>Name: <%= link_to @member.name, member_path(@member)%></h3>
+<h3>List of members</h3>
+
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th>#</th>
+	    <th><abbr title="Name">Name</abbr></th>
+	    <th><abbr title="Website">Website</abbr></th>
+	    <th><abbr title="Action"></abbr></th>
+	  </tr>
+	</thead>
+	<tbody>
+		<% @non_friends.each_with_index do |m, index| %>
+	    <tr>
+	      <td><%=index+1%></td>
+	      <td><%=m.name%></td>
+	      <td><%= link_to m.website, "https://#{m.website}", :target => '_blank' %></td>
+	      <td>
+	      	<button class="button is-light"><%= link_to "Make Friend", save_friend_member_path(@member, friend_id: m.id)%>
+	      	</button>
+	      </td>
+	    </tr>
+		<% end %>
+	</tbody>
+</table>
+

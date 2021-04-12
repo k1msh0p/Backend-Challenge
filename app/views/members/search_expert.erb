@@ -1,0 +1,20 @@
+<h3>Name: <%= link_to @member.name, member_path(@member)%></h3>
+<h3>Search for expert</h3>
+
+<div class="field">
+<%= form_tag search_expert_result_member_path(@member), :method => 'post' do %>
+		  <div class="columns">
+			  <div class="column is-one-fifth"><label class="label">Enter Search</label></div>
+			  <div class="column"><input name="search" class="input" type="text" placeholder="Text input" size="15"></div>
+			  <div class="column"><button class="button is-dark">Search</button></div>
+			</div>
+<% end %>
+</div>
+<div class="field">
+	<% Rails.logger.info "front end #{@results}"%>
+	<% if @result %>
+		<% @result.each do |r| %>
+			<%=r%><br>
+		<% end %>
+	<% end %>
+</div>
